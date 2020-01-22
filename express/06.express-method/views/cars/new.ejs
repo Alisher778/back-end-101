@@ -1,0 +1,35 @@
+<%- include('../partials/header.ejs')%>
+    <div class="container">
+        <form action="/cars/new" method="POST" class="mx-auto mt-5" style="max-width: 400px;">
+            <div class="h3 my-3 text-center">Add new car</div>
+            <div class="form-group">
+                <label for="inputEmail4">Model</label>
+                <input type="text" name="name" class="form-control" id="inputEmail4">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">Brand</label>
+                <input type="text" name="brand" class="form-control" id="inputPassword4">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">Price</label>
+                <input type="number" name="price" class="form-control" id="inputPassword4">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">Description</label>
+                <textarea name="info" class="form-control" cols="10" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">Currency</label>
+                <select name="currency" id="">
+                  <option value="USD">USD</option>
+                  <option value="USZ">USZ</option>
+                  <option value="RUB">RUB</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary d-block w-100">ADD</button>
+            </div>
+        </form>
+    </div>
+
+    <%- include('../partials/footer.ejs')%>

@@ -8,6 +8,9 @@
     <title>
         <%= title %>
     </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <!-- <script>
         const url = location.href.endsWith('/sign-in');
         if (url) {
@@ -17,3 +20,35 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <% if(admin) {%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cars">Cars List</a>
+                    </li>
+                    <% } %>
+
+            </ul>
+            <% if(admin) {%>
+                <a class="btn btn-success mr-3" href="/cars/new">+ New Car</a>
+                <a href="/log-out" class="btn btn-outline-danger">Log Out</a>
+
+                <%} else {%>
+                    <a href="/sign-up" class="btn btn-outline-primary mr-2">Sign Up</a>
+                    <a href="/sign-in" class="btn btn-success">Sign In</a>
+                    <% }%>
+
+        </div>
+    </nav>

@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs')%>
+    <div class="container">
+        <form action="/cars/<%= data.id%>/edit" method="POST" class="mx-auto mt-5" style="max-width: 400px;">
+            <div class="h3 my-3 text-center">Add new car</div>
+            <div class="form-group">
+                <label for="inputEmail4">Model</label>
+                <input type="text" name="name" value="<%= data.name%>" class="form-control" id="inputEmail4">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">Brand</label>
+                <input type="text" name="brand" value="<%= data.brand%>" class="form-control" id="inputPassword4">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">Price</label>
+                <input type="number" name="price" value="<%= data.price%>" class="form-control" id="inputPassword4">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">Description</label>
+                <textarea name="info" class="form-control" cols="10" rows="4"><%= data.info%></textarea>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword4">Currency</label>
+                <select name="currency">
+                  <% ['USZ', 'USD', 'RUB'].forEach(item => {%>
+                      <% if(item == data.currency){%>
+                        <option value="<%= item %>" selected><%= item%></option>
+                
+                      <%} else {%>
+                        <option value="<%= item%>"><%= item%></option>
+                   <%}%>
+                  <%})%>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary d-block w-100">Update</button>
+            </div>
+        </form>
+    </div>
+
+    <%- include('../partials/footer.ejs')%>

@@ -1,7 +1,8 @@
 var express = require('express');
 var path = require('path');
+const cars = require('./db/cars');
 const userRouter = require('./routes/users');
-const moneyRouter = require('./routes/money');
+const carRouter = require('./routes/cars');
 const session = require('express-session');
 var app = express();
 // view engine setu
@@ -14,22 +15,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'fjsdgfjhsdghfgsdjgfhjdasjh321531276576jhgwjqgedags djasgdjasdjbasjhdfghasf hxfdaajhdgajs ',
   resave: false,
-  saveUninitialized: true,
-}))
-app.use((req, res, next) => {
-  console.log(req.url);
-  console.log(req.session);
+  saveUninitialized: false,
+}));
+
+app.use(function (req, res, next) {
+  res.locals.admin = req.session.admin || false
+  res.locals.user = req.session.user || ''
+  res.locals.title = req.url.slice(1).toLocaleUpperCase() || ''
   next()
 })
 
 app.use(userRouter);
-app.use('/money', moneyRouter);
+app.use('/cars', carRouter);
+
 app.get('/', (req, res) => {
-  console.log(req.session)
   const isLoggedIn = req.session.admin;
-  res.render('index', { title: 'Home page', admin: isLoggedIn, data: [{ id: 1, name: 'Bobo' }] });
+  res.render('index', { title: 'Home page', admin: isLoggedIn, cars });
 });
 
 app.listen(3000, () => console.log(3000))
 module.exports = app;
-// module.exports.auth = auth;

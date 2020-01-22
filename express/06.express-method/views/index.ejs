@@ -1,11 +1,8 @@
-<%- include('./partials/header.ejs')%>
-    <h1>
-        <%= title %>
-    </h1>
-    <% if(admin) {%>
-        <a href="/log-out">Log out</a>
-        <% } else { %>
-            <a href="/sign-in">Sign In</a> |
-            <a href="/sign-up">Sign Up</a>
-            <% }%>
-                <%- include('./partials/footer.ejs')%>
+<% if(admin) {%>
+    <%- include('./cars/index.ejs')%>
+        <%} else {%>
+            <%- include('./partials/header.ejs')%>
+
+                <a href="/sign-in" class="btn btn-primary btn-lg">Sign In</a>
+                <%}%>
+                    <%- include('./partials/footer.ejs')%>
