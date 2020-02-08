@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs')%>
+    <div class="container mt-5">
+        <div class="card-deck row">
+            <% if(cars.length > 0) {%>
+                <% cars.forEach(item => {%>
+                    <div class="card col-md-3 col-sm-6">
+                        <img src="<%= item.img || '/img/car.jpg'%>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= item.name %>
+                            </h5>
+                            <p class="card-text">
+                                <%= item.info.slice(0,65)+' ...' %>
+                            </p>
+                            <p class="card-text d-flex">
+                                <small class="text-muted"><%= item.brand %></small>
+                                <b class="text-muted ml-auto small text-primary font-weight-bold"><%= item.price %> <%= item.currency %></b>
+                            </p>
+                            <a href="/cars/<%= item.id%>" class="btn btn-outline-success btn-sm btn-block">View</a>
+                        </div>
+                    </div>
+                    <% })%>
+
+        </div>
+        <% } else {%>
+            <div class="jumbotron text-center">
+                <h1 class="display-4 mb-3">There is no cars</h1>
+                <a href="/cars/new" class="btn btn-primary btn-lg">Add car now</a>
+            </div>
+            <% }%>
+    </div>
+
+    <%- include('../partials/footer.ejs')%>

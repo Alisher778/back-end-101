@@ -1,0 +1,20 @@
+[
+    {
+        "id": 2,
+        "name": "Aldama",
+        "brand": "Meni",
+        "price": "1234",
+        "currency": "USD",
+        "info": "UI/UX guru",
+        "img": "/uploads/Aldama-1579876268591.jpg"
+    },
+    {
+        "name": "NIce car",
+        "brand": "Baba",
+        "price": "3256",
+        "currency": "USD",
+        "info": "dadsa",
+        "id": 1580133076816,
+        "img": ""
+    }
+]
