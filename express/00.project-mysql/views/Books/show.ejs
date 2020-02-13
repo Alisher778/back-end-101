@@ -1,0 +1,21 @@
+<%- include ../Partials/header.ejs %>
+    <div class="container mt-5">
+        <div class="card" style="width: 18rem;">
+            <img src="<%= data.img || 'https://cdn.pixabay.com/photo/2018/01/17/18/43/book-3088775__340.jpg'%>" class="card-img-top" alt="books">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= data.title %>
+                </h5>
+                <p class="card-text">
+                    <%= data.info %>
+                </p>
+                <a href="/books/<%= data.id%>/delete" class="btn btn-primary btn-sm">Delete</a>
+                <a href="/books/<%= data.id%>/edit" class="btn btn-danger btn-sm">Edit</a>
+            </div>
+            <div class="card-footer">
+                <p class="card-text">
+                    <span><%= data.pages %></span> | <span>$<%= data.price %></span>
+                </p>
+            </div>
+        </div>
+    </div>

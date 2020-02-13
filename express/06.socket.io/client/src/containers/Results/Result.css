@@ -1,0 +1,27 @@
+.grey {
+    /* background-color: #f1f4f7; */
+}
+
+.title-success {
+    background-color: rgba(0, 203, 122, 0.16);
+    color: #00cb7a;
+}
+
+.title-danger {
+    background-color: rgba(255, 0, 85, 0.16);
+    color: #ff0057;
+}
+
+.title-warning {
+    background-color: rgba(255, 193, 7, 0.16);
+    color: #FFC107;
+}
+
+.col-6 {
+    border: 1px solid;
+}
+
+.col-6 h5 {
+    margin: 4px;
+    font-size: 16px;
+}

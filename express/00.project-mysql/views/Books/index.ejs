@@ -1,0 +1,16 @@
+<%- include ../Partials/header.ejs %>
+    <div class="container mt-5">
+        <h3>Books List</h3>
+        <ul class="list-group list-group-flush">
+            <% if(data){%>
+                <% data.forEach(item => {%>
+                    <li class="list-group-item">
+                        <a href="/books/<%= item.id%>">
+                            <%= item.title %>
+                        </a>
+                    </li>
+
+                    <% })%>
+                        <% } %>
+        </ul>
+    </div>

@@ -1,0 +1,22 @@
+<%- include ../Partials/header.ejs %>
+    <div class="container mt-5">
+        <h3>Edit the book</h3>
+        <form action="/books/<%= data.id%>/edit" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" name="title" value="<%= data.title%>" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="price" value="<%= data.price%>" placeholder="Price">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="pages" value="<%= data.pages%>" placeholder="Pages">
+            </div>
+            <div class="form-group">
+                <input type="url" class="form-control" name="img" value="<%= data.img%>" placeholder="Paste img here">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="info" placeholder="Message"><%= data.info%></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>

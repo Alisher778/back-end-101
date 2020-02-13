@@ -1,36 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<%- include ../Partials/header.ejs %>
+    <div class="container mt-5">
+        <h3>Add a book</h3>
+        <form action="/books/new" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" name="title" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="price" placeholder="Price">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="pages" placeholder="Pages">
+            </div>
+            <div class="form-group">
+                <input type="url" class="form-control" name="img" placeholder="Paste img here">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="info" placeholder="Message">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+          </textarea>
 
-<body>
-    <form action="/books" method="POST">
-        <div>
-            <input type="text" name="title" placeholder="Title">
-        </div>
-        <div>
-            <input type="number" name="price" placeholder="Price">
-        </div>
-        <div>
-            <input type="number" name="pages" placeholder="Pages">
-        </div>
-        <button type="submit">Create</button>
-    </form>
-
-    <ul>
-        <% if(data){%>
-            <% data.forEach(item => {%>
-                <li>
-                    <%= item.title %>
-                </li>
-
-                <% })%>
-                    <% } %>
-    </ul>
-</body>
-
-</html>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
